@@ -7,10 +7,10 @@
 
       <% if product.is_it_in_the_shopping_cart?(current_user) %>
         <%= link_to "Remove from Cart",
-            cart_product_path(product.cart_product(current_user)), method: :delete, class: 'btn btn-danger', remote: true %>
+            cart_product_path(product.cart_product(current_user)), method: :delete, class: 'btn btn-danger', remote: true, id: "#{product.id}" %>
       <% else %>
         <%= link_to "Add to Cart",
-          cart_products_path(product_id: product.id), method: :post, class: 'btn btn-primary', remote: true %>
+          cart_products_path(product_id: product.id), method: :post, class: 'btn btn-primary', id: "#{product.id}", remote: true %>
       <% end %>
 
     </li>
