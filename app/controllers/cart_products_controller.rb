@@ -17,6 +17,8 @@ class CartProductsController < ApplicationController
     # telling Rails to not use turbolinks to reload the page
     # without refreshing it
     @cart_product.save
+
+    render json: { cart_product: @cart_product }
   end
 
   def destroy

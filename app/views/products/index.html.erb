@@ -6,11 +6,9 @@
       <%= "#{product.name} - #{formatted_price(product.price)}" %>
 
       <% if product.is_it_in_the_shopping_cart?(current_user) %>
-        <%= link_to "Remove from Cart",
-            cart_product_path(product.cart_product(current_user)), method: :delete, class: 'btn btn-danger', remote: true, id: "#{product.id}" %>
+        <button class="btn btn-danger remove-from-cart-btn" id="<%= product.id %>">Remove from Cart</button>
       <% else %>
-        <%= link_to "Add to Cart",
-          cart_products_path(product_id: product.id), method: :post, class: 'btn btn-primary', id: "#{product.id}", remote: true %>
+        <button class="btn btn-primary add-to-cart-btn" id="<%= product.id %>">Add to Cart</button>
       <% end %>
 
     </li>

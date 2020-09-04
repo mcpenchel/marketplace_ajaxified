@@ -1,8 +1,0 @@
-removeFromCartBtn = document.getElementById("<%= @product.id %>")
-addToCartBtn = "<%= j link_to 'Add to Cart', cart_products_path(product_id: @product.id), method: :post, class: 'btn btn-primary', id: "#{@product.id}", remote: true %>";
-
-li = removeFromCartBtn.parentElement;
-
-removeFromCartBtn.remove();
-
-li.insertAdjacentHTML("beforeend", addToCartBtn);
